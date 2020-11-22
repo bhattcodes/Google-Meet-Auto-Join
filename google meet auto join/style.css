@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
+body{
+    margin: 0px 0px;
+}
+.container{
+    position : relative;
+    width: 200px;
+    height: 150px;
+    border: 2px solid black;
+}
+.heading{
+    position: absolute;
+    top: 10px;
+    left : 5px;
+    width: 110px;
+    background-color: rgb(4, 141, 4);
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Source Code Pro', monospace;
+}
+.clockicon{
+    position: absolute;
+    top: 3px;
+    left : 135px;
+    background-image: url("images/autojoin.png") ;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
+.timeinput{
+    position: absolute;
+    top: 65px;
+    left : 5px;
+    border: 2px solid black;
+}
+.linkinput{
+    position: absolute;
+    top: 95px;
+    left : 5px;
+    border: 2px solid black;
+}
+.tickbtn{
+    position: absolute;
+    top: 120px;
+    left : 120px;
+    background-image: url("images/checked.png") ;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+.tickbtn:hover{
+    opacity: 0.5;
+}
+.stopbtn{
+    position: absolute;
+    top: 120px;
+    left : 150px;
+    background-image: url("images/remove.png") ;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+.stopbtn:hover{
+    opacity: 0.5;
+}
+.line{
+    position: absolute;
+    top: 52px;
+    left: 5px;
+    width: 118px;
+    height: 1.5px;
+    background: black;
+
+}
