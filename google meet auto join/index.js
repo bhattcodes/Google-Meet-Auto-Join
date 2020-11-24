@@ -1,6 +1,12 @@
 backgroundcheck();
-
+document.getElementById("checkbox").disabled =true;
 function backgroundcheck() {
+    if (localStorage.getItem("checkbox")=="true"){
+        document.getElementById("checkbox").checked=true;
+    }else{
+        document.getElementById("checkbox").checked=false;
+    }
+
     let backgroundwork = localStorage.getItem("backgroundwork");
     if (backgroundwork == "yes") {
         document.querySelector(".linkinput").disabled = true;
@@ -20,13 +26,14 @@ tickbtn = document.querySelector(".tickbtn");
 tickbtn.addEventListener('click',()=>{
     let obj={
         "time": document.getElementById("timeinput").value,
-        "link": document.getElementById("linkinput").value
+        "link": document.getElementById("linkinput").value,
+        "checkbox": document.getElementById("checkbox").checked
     }
     if(obj.link!=""){
-        // chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-        //     var activeTab = tabs[0];
-        //     chrome.tabs.sendMessage(activeTab.id, { "message": "tickbtnclicked", "object": obj });
-        // });
+        chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+            var activeTab = tabs[0];
+            chrome.tabs.sendMessage(activeTab.id, { "message": "tickbtnclicked", "object": obj });
+        });
         localStorage.setItem("backgroundwork","yes");
         localStorage.setItem("time",obj.time);
         localStorage.setItem("link",obj.link);
@@ -44,12 +51,17 @@ tickbtn.addEventListener('click',()=>{
 
 document.querySelector(".stopbtn").addEventListener("click", () => {
 
-    // chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-    //     var activeTab = tabs[0];
-    //     chrome.tabs.sendMessage(activeTab.id, { "message": "stopbtnclicked" });
-    // });
+    chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+        var activeTab = tabs[0];
+        chrome.tabs.sendMessage(activeTab.id, { "message": "stopbtnclicked" });
+    });
     localStorage.clear();
     localStorage.setItem("backgroundwork","no");
     backgroundcheck();
 
+})
+
+document.querySelector("#checkbox").addEventListener("click", () => {
+    // console.log(document.getElementById("checkbox").checked);
+    localStorage.setItem("checkbox",document.getElementById("checkbox").checked);
 })
