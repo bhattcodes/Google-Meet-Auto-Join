@@ -17,7 +17,9 @@
     "permissions": [
         "storage"
     ],
+    "icons" : {"192" : "images/1.png"},
     "browser_action": {
+        "default_icon": "images/1.png",
         "default_popup": "index.html"
     }
 }

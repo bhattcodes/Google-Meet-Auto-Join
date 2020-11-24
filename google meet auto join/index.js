@@ -1,11 +1,11 @@
 backgroundcheck();
-document.getElementById("checkbox").disabled =true;
+// document.getElementById("checkbox").disabled =true;
 function backgroundcheck() {
-    if (localStorage.getItem("checkbox")=="true"){
-        document.getElementById("checkbox").checked=true;
-    }else{
-        document.getElementById("checkbox").checked=false;
-    }
+    // if (localStorage.getItem("checkbox")=="true"){
+    //     document.getElementById("checkbox").checked=true;
+    // }else{
+    //     document.getElementById("checkbox").checked=false;
+    // }
 
     let backgroundwork = localStorage.getItem("backgroundwork");
     if (backgroundwork == "yes") {
@@ -27,7 +27,7 @@ tickbtn.addEventListener('click',()=>{
     let obj={
         "time": document.getElementById("timeinput").value,
         "link": document.getElementById("linkinput").value,
-        "checkbox": document.getElementById("checkbox").checked
+        // "checkbox": document.getElementById("checkbox").checked
     }
     if(obj.link!=""){
         chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
@@ -61,7 +61,7 @@ document.querySelector(".stopbtn").addEventListener("click", () => {
 
 })
 
-document.querySelector("#checkbox").addEventListener("click", () => {
-    // console.log(document.getElementById("checkbox").checked);
-    localStorage.setItem("checkbox",document.getElementById("checkbox").checked);
-})
+// document.querySelector("#checkbox").addEventListener("click", () => {
+//     // console.log(document.getElementById("checkbox").checked);
+//     localStorage.setItem("checkbox",document.getElementById("checkbox").checked);
+// })
