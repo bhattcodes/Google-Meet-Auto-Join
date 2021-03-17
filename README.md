@@ -1,6 +1,8 @@
 # Google-Meet-Auto-Join
 automatically join google meet on entered time (chrome extension)
 
+<img src="./images/googleMeetAutoJoin.jpg" height="auto" width="auto">
+
 Automatically Joins Google Meet on Selected Time.
 
 Features:
